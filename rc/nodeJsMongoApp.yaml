@@ -19,7 +19,7 @@ items:
       spec:
         hostNetwork: false
         containers:
-        - image: guptaarvindk/nodejs-mongo-app:v1
+        - image: diamantisolutions/nodejs-mongo-app:v1
           name: arvind-nodejs-from-mongo
           imagePullPolicy: Always
           command: [npm] 

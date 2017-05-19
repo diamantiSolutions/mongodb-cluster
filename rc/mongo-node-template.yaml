@@ -37,7 +37,7 @@ items:
               - name: mongo-vol
                 mountPath: /data/db
           - name: mongo-sidecar
-            image: guptaarvindk/mongo-k8s-sidecar:v1
+            image: diamantisolutions/mongo-k8s-sidecar:v1
             imagePullPolicy: Always
             env:
               - name: MONGO_SIDECAR_POD_LABELS

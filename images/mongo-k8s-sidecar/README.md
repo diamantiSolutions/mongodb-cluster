@@ -1,3 +1,6 @@
+THIS project is copied from:
+https://github.com/cvallance/mongo-k8s-sidecar
+
 # Mongo Kubernetes Replica Set Sidecar
 
 This project is as a PoC to setup a mongo replica set using Kubernetes. It should handle resizing of any type and be

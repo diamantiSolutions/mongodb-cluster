@@ -1,16 +1,16 @@
  var mongoose = require('mongoose'),
 
- Pupps = mongoose.model('pups');
+ Cars = mongoose.model('cars');
 
-function getAllPuppies(req, res, next) {
-  Pupps.find({})
+function getAllCars(req, res, next) {
+  Cars.find({})
     .then(function (data) {
       console.log('data');
       res.status(200)
         .json({
           status:'success',
           data: data,
-          message: 'Retrieved ALL puppies'
+          message: 'Retrieved ALL cars'
         });
     })
     .catch(function (err) {
@@ -18,14 +18,14 @@ function getAllPuppies(req, res, next) {
     });
 }
 
-function getSinglePuppy(req, res, next) {
-   Pupps.findById(req.params.id)
+function getSingleCar(req, res, next) {
+   Cars.findById(req.params.id)
     .then(function (data) {
       res.status(200)
         .json({
           status: 'success',
           data: data,
-          message: 'Retrieved ONE puppy'
+          message: 'Retrieved ONE car'
         });
     })
     .catch(function (err) {
@@ -33,14 +33,14 @@ function getSinglePuppy(req, res, next) {
     });
 }
 
-function createPuppy(req, res, next) {
-  var new_puppy = new Pupps(req.body);
-  new_puppy.save()
+function createCar(req, res, next) {
+  var new_car = new Cars(req.body);
+  new_car.save()
     .then(function () {
       res.status(200)
         .json({
           status: 'success',
-          message: 'Inserted one puppy'
+          message: 'Inserted one car'
         });
     })
     .catch(function (err) {
@@ -48,13 +48,13 @@ function createPuppy(req, res, next) {
     });
 }
 
-function updatePuppy(req, res, next) {
-  Pupps.findByIdAndUpdate(req.params.id, req.body)
+function updateCar(req, res, next) {
+  Cars.findByIdAndUpdate(req.params.id, req.body)
     .then(function () {
       res.status(200)
         .json({
           status: 'success',
-          message: 'Updated puppy'
+          message: 'Updated car'
         });
     })
     .catch(function (err) {
@@ -62,15 +62,15 @@ function updatePuppy(req, res, next) {
     });
 }
 
-function removePuppy(req, res, next) {
+function removeCar(req, res, next) {
  
-  Pupps.remove({_id: req.params.id})
+  Cars.remove({_id: req.params.id})
     .then(function (result) {
       /* jshint ignore:start */
       res.status(200)
         .json({
           status: 'success',
-          message: `Removed the puppy`
+          message: `Removed the car`
         });
       /* jshint ignore:end */
     })
@@ -81,9 +81,9 @@ function removePuppy(req, res, next) {
 
 
 module.exports = {
-  getAllPuppies: getAllPuppies,
-  getSinglePuppy: getSinglePuppy,
-  createPuppy: createPuppy,
-  updatePuppy: updatePuppy,
-  removePuppy: removePuppy
+  getAllCars: getAllCars,
+  getSingleCar: getSingleCar,
+  createCar: createCar,
+  updateCar: updateCar,
+  removeCar: removeCar
 };

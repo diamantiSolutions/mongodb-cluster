@@ -2,22 +2,22 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var PupsSchema = new Schema({
-  name: {
+var CarsSchema = new Schema({
+  model: {
     type: String,
-    Required: 'Kindly enter the name of puppy'
+    Required: 'Kindly enter the model of car'
   },
-  age: {
+  year: {
     type: Number,
     
   },
-  sex: {
+  color: {
     type: String
   },
-  breed: {
+  make: {
     type: String
   },
   
 });
 
-module.exports = mongoose.model('pups', PupsSchema);
+module.exports = mongoose.model('cars', CarsSchema);

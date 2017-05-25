@@ -9,7 +9,7 @@ var express = require('express'),
 console.log('started node server. Connecting mongo server at '+process.env.MHOST+':'+process.env.MPORT);
 
 /** Connection to mongo **/
-mongoose.connect('mongodb://'+process.env.MHOST+':'+process.env.MPORT+'/puppies'); 
+mongoose.connect('mongodb://'+process.env.MHOST+':'+process.env.MPORT+'/cars'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));

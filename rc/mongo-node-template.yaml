@@ -20,6 +20,27 @@ items:
           environment: test
         annotations:
           diamanti.com/endpoint0: '{"network":"default","perfTier":"high"}'
+          scheduler.alpha.kubernetes.io/affinity: >
+            {
+              "podAntiAffinity": {
+                "preferredDuringSchedulingIgnoredDuringExecution": [
+                  {
+                    "weight" : 100,
+                    "podAffinityTerm": {
+                      "labelSelector" : {
+                      "matchExpressions": [
+                        {
+                          "key": "role",
+                          "operator": "In",
+                          "values": ["mongo"]
+                        }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
         name: mongo-node-<num>
       spec:
         containers:

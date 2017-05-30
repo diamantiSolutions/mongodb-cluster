@@ -20,7 +20,7 @@ items:
         hostNetwork: false
         containers:
         - image: diamantisolutions/nodejs-mongo-app:v2
-          name: arvind-nodejs-from-mongo
+          name: nodejs-from-mongo
           imagePullPolicy: Always
           command: [npm] 
           args: [start]
